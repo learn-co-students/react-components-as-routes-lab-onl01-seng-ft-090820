@@ -1,10 +1,25 @@
 import React from 'react';
 import { directors } from '../data';
 
+const directorList = directors.map((d, i) => {
+  return (
+    <div key={i}>
+      {d.name}
+      <ul>
+        <li>
+          Movies: {d.movies.join(", ")}
+        </li>
+      </ul>
+    </div>
+  )
+})
+
 const Directors = () => {
   return (
     <div>
-      {/*{code here}*/}
+      <h1>Directors Page</h1>
+        {/* {console.log(directors)} */}
+        {directorList}
     </div>
   );
 }
